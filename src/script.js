@@ -1,9 +1,10 @@
 // Cria um valor aleatório de RGB e coloca no parágrafo como string (cor a ser adivinhada)
 function randomColor() {
-  const colorGuess = `(${Math.floor(Math.random() * 255)}, `
-   + `${Math.floor(Math.random() * 255)}, `
-   + `${Math.floor(Math.random() * 255)})`;
-  document.getElementById('rgb-color').innerText = colorGuess;
+  const colorGuess =
+    `(${Math.floor(Math.random() * 255)}, ` +
+    `${Math.floor(Math.random() * 255)}, ` +
+    `${Math.floor(Math.random() * 255)})`;
+  document.getElementById('rgb-color').innerText = 'RGB' + colorGuess;
   return colorGuess;
 }
 
@@ -11,12 +12,15 @@ function randomColor() {
 let score = 0;
 function chosenColor() {
   this.style.borderColor = 'red';
+  const tagAnswer = document.getElementById('answer');
   if (this.id === 'correct') {
-    document.getElementById('answer').innerText = 'Acertou!';
+    tagAnswer.innerText = 'Acertou!';
+    tagAnswer.style.color = 'rgb(132, 204, 22)';
     score += 3;
-    document.getElementById('score').innerText = `Placar: ${score}`;
+    document.getElementById('score').innerText = `Score: ${score}`;
   } else {
-    document.getElementById('answer').innerText = 'Errou! Tente novamente!';
+    tagAnswer.innerText = 'Errou! Tente novamente!';
+    tagAnswer.style.color = 'rgb(190, 18, 60)';
   }
 }
 
@@ -47,10 +51,12 @@ addColors();
 
 // Reseta as cores ao clique do botão e aleatoriza tudo novamente
 function reset() {
+  const tagAnswer = document.getElementById('answer');
   randomColor();
   document.getElementById('color-option').innerHTML = '';
   addColors();
-  document.getElementById('answer').innerText = 'Escolha uma cor';
+  tagAnswer.innerText = 'Escolha uma opção';
+  tagAnswer.style.color = 'white';
 }
 
 document.getElementById('reset-game').addEventListener('click', reset);

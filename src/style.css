@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ball {
+  height: 50px;
+  width: 50px;
+  border: 1px solid white;
+  margin: 10px;
+  border-radius: 100%;
+  display: inline-block;
+  cursor: pointer;
+  transition-duration: 75ms;
+}
+
+.ball:hover {
+  transform: scale(1.30);
+}

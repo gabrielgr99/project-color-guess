@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advinhe a cor</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+
+  <body
+    class="flex flex-col items-center bg-[url('./assets/diagmonds-texture-bg.png')]"
+  >
+    <img
+      src="./assets/interrogation.png"
+      alt="interrogation image"
+      class="h-[100px] w-[100px] my-6 animate-[wiggle_300ms_ease-in-out_2]"
+    />
+    <div
+      class="rounded-md p-4 font-mono drop-shadow-md w-max backdrop-blur-md border-white border-2
+      text-white"
+    >
+      <h1 id="title" class="text-[35px] text-center my-2 font-bold">
+        Qual é a cor
+      </h1>
+      <div class="flex justify-between">
+        <p id="rgb-color" class="mb-4 font-mono text-[20px]"></p>
+        <p id="score" class="mb-2 text-[20px]">Score: 0</p>
+      </div>
+      <section id="color-option" class="my-4"></section>
+      <div class="text-center">
+        <h3 id="answer" class="mt-6 font-bold">Escolha uma opção</h3>
+        <button
+          id="reset-game"
+          class="mt-6 py-2 px-3 rounded font-bold bg-gradient-to-r from-green-400 to-blue-500
+          text-white drop-shadow-md hover:from-pink-500 hover:to-yellow-500 duration-100
+          hover:scale-110"
+        >
+          Resetar cores
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
